@@ -43,7 +43,7 @@ public:
 
 	}
 
-	~NDArray(){ std::cout << "\nAaaa"; }
+	~NDArray(){}//std::cout << "\nAaaa"; }
 
 
 	NDArray(const NDArray& ndarr){
@@ -74,7 +74,8 @@ public:
 
 	}
 
-	NDArray operator + (const T& arg){
+	template<typename T1>
+	NDArray operator + (const T1& arg){
 		NDArray result(*this);
 		result += arg;
 		return result;
@@ -91,12 +92,14 @@ public:
 
 	}
 
-	NDArray& operator -= (const T& arg){
+	template<typename T1>
+	NDArray& operator -= (const T1& arg){
 		(*this) += -arg;
 		return (*this);
 	}
 
-	NDArray operator - (const T& arg){
+	template<typename T1>
+	NDArray operator - (const T1& arg){
 		NDArray result(*this);
 		result -= arg;
 		return result;
@@ -120,7 +123,8 @@ public:
 
 	}
 
-	NDArray operator * (const T& arg){
+	template<typename T1>
+	NDArray operator * (const T1& arg){
 		NDArray result(*this);
 		result *= arg;
 		return result;
@@ -141,7 +145,8 @@ public:
 		return (*this);
 	}
 
-	NDArray operator / (const T& arg){
+	template<typename T1>
+	NDArray operator / (const T1& arg){
 		NDArray result(*this);
 		result /= arg;
 		return result;

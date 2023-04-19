@@ -9,7 +9,7 @@ ifeq ($(OS), Windows_NT)
 	TARGET = main.exe
 else
 	RM = rm
-	TARGET = main
+	TARGET = ./main
 endif
 
 all:
